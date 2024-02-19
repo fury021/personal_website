@@ -22,9 +22,9 @@ const HeroSection = () => {
                             // Same substring at the start will only be typed out once, initially
                             'Mann Patel',
                             1000, // wait 1s before replacing 
-                            'a student majoring in Computer Science',
+                            'a student at the University of Manitoba',
                             1000,
-                            'minoring in mathematics and statistics',
+                            'majoring in Computer Science',
                             1000,
                         ]}
                         wrapper="span"
