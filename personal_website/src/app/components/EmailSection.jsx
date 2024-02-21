@@ -7,13 +7,13 @@ import Image from 'next/image'
 
 const EmailSection = () => {
     const [result, setResult] = React.useState("Send Message");
+    const apiKey = process.env.NEXT_PUBLIC_REACT_APP_API_KEY;
 
     const handleSubmit = async (event) => {
       event.preventDefault();
       setResult("Sending....");
       const formData = new FormData(event.target);
-  
-      formData.append("access_key", "5f7c6746-e5ee-4e20-9696-7c38a207beed");
+      formData.append("access_key", apiKey);
   
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -31,7 +31,7 @@ const EmailSection = () => {
 
 
   return (
-    <section className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4'>
+    <section id='contact' className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4'>
         <div>
             <h5 className='text-xl font-bold text-white my-2'>Let's Connect</h5>
             <p className='text-[#ADB7BE] mb-4 max-w-md'>
@@ -59,7 +59,7 @@ const EmailSection = () => {
                         id="email" 
                         required
                         className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
-                        placeholder='abc@google.com'
+                        placeholder='youremail@domain.com'
                     />
                 </div>
                 <div className='mb-6'>

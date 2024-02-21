@@ -33,8 +33,7 @@ const TAB_DATA = [
     id : "certifications",
     content : (
       <ul className='list-disc pl-2'>
-        <li>Something</li>
-        <li>Something</li>
+        <li></li>
       </ul>
     )
   }
