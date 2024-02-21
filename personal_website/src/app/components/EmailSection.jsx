@@ -6,39 +6,29 @@ import Link from "next/link"
 import Image from 'next/image'
 
 const EmailSection = () => {
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
+    const [result, setResult] = React.useState("Send Message");
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const data = {
-        email: e.target.email.value,
-        subject: e.target.subject.value,
-        message: e.target.message.value,
-      };
-      const JSONdata = JSON.stringify(data);
-      const endpoint = "/api/send";
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      setResult("Sending....");
+      const formData = new FormData(event.target);
   
-      // Form the request for sending data to the server.
-      const options = {
-        // The method is POST because we are sending data.
+      formData.append("access_key", "5f7c6746-e5ee-4e20-9696-7c38a207beed");
+  
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        // Tell the server we're sending JSON.
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // Body of the request is the JSON data we created above.
-        body: JSONdata,
-      };
+        body: formData
+      }).then((res) => res.json());
   
-      const response = await fetch(endpoint, options);
-      const resData = await response.json();
-  
-      if (response.status === 200) {
-        console.log("Message sent.");
-        setEmailSubmitted(true);
+      if (res.success) {
+        console.log("Success", res);
+        setResult(res.message);
+      } else {
+        console.log("Error", res);
+        setResult(res.message);
       }
     };
-  
+
 
   return (
     <section className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4'>
@@ -100,7 +90,7 @@ const EmailSection = () => {
                 <button
                     type='submit'
                     className='bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'>
-                        Send Message
+                        {result}
                     </button>
             </form>
         </div>
