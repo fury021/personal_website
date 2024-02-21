@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "Project 1 description",
+    description: "Made a personal website using NextJS",
     image: "/images/projects/2.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -16,22 +16,14 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
+    title: "Snake-AI",
+    description: "Developed a training model to train an agent at playing the Snake game.",
     image: "/images/projects/2.jpg",
     tag: ["All"],
     gitUrl: "/",
     previewUrl: "/",
   },
-  {
-    id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/2.jpg",
-    tag: ["All"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
+  
 ];
 
 const ProjectsSection = () => {
