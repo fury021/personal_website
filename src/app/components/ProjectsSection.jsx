@@ -11,8 +11,8 @@ const projectsData = [
     description: "Made a personal website using NextJS",
     image: "/images/projects/2.jpg",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/fury021/personal_website",
+    previewUrl: "https://github.com/fury021/personal_website",
   },
   {
     id: 2,
