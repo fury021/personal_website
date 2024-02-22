@@ -20,8 +20,8 @@ const projectsData = [
     description: "Developed a training model to train an agent at playing the Snake game.",
     image: "/images/projects/2.jpg",
     tag: ["All"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/fury021/snake-project",
+    previewUrl: "https://github.com/fury021/snake-project",
   },
   
 ];
